@@ -18,7 +18,7 @@ with app.app_context():
 
 #### ROTA RESETAR DADOS ####
 @app.route('/salas/resetar', methods=['POST'])
-async def resetar_dados():
+def resetar_dados():
     from models.salas import Salas
     from models.reservas import Reservas
     
