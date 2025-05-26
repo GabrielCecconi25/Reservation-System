@@ -12,17 +12,18 @@ API desenvolvida com Flask e SQLAlchemy para gerenciamento de salas e suas reser
 
 ## 📁 Estrutura
 
+```
 app/
-├── app.py # Ponto de entrada da aplicação Flask
-├── config.py # Configurações de ambiente e banco de dados
+├── app.py #Ponto de entrada da aplicação Flask
+├── config.py #Configurações de ambiente e banco de dados
 ├── models/
-│ ├── salas.py # Model de Salas
-│ ├── reservas.py # Model de Reservas
-| └── turmas_dummy.py # Model de Turmas (outra API)
+│ ├── salas.py #Model de Salas
+│ ├── reservas.py #Model de Reservas
+| └── turmas_dummy.py #Model de Turmas (outra API)
 ├── controller/
-│ ├── sala.py # Controller de Salas
-│ └── reserva.py # Controller de Reservas
-
+│ ├── sala.py #Controller de Salas
+│ └── reserva.py #Controller de Reservas
+```
 
 ## ⚙️ Configuração
 
@@ -31,7 +32,7 @@ app/
 A aplicação utiliza MySQL. O arquivo `config.py` já possui um exemplo de conexão via `pymysql`:
 
 ```python
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@db:3306/school-system"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@host.docker.internal:3306/school-system"
 ```
 ⚠️ Altere as credenciais e host conforme seu ambiente.
 
@@ -56,7 +57,7 @@ Retorna os dados de uma reserva.
 POST /salas/reservas
 Cria uma nova reserva.
 
-### gRESETAR
+### RESETAR
 POST /salas/resetar
 Reseta salas e reservas no banco
 
