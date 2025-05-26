@@ -25,6 +25,9 @@ class Reservas(db.Model):
 
     @staticmethod
     def criar_reserva(dados):
+        for campo in ['id_sala', 'id_turma', 'data_reserva', 'hora_inicio', 'hora_fim']:
+            if campo not in dados:
+                raise ValueError((f"Campo '{campo}' é obrigatório."), 400)
         try:
             dados['data_reserva'] = datetime.strptime(dados['data_reserva'], '%Y-%m-%d').date()
             dados['hora_inicio'] = datetime.strptime(dados['hora_inicio'], '%H:%M').time()
