@@ -36,7 +36,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@db:
 ⚠️ Altere as credenciais e host conforme seu ambiente.
 
 ## 🔌 Endpoints
-###SALAS
+### SALAS
 GET /salas
 Lista todas as salas.
 
@@ -46,7 +46,7 @@ Retorna os dados de uma sala.
 POST /salas
 Cria uma nova sala.
 
-###RESERVAS
+### RESERVAS
 GET /salas/reservas
 Lista todas as reservas.
 
@@ -56,7 +56,7 @@ Retorna os dados de uma reserva.
 POST /salas/reservas
 Cria uma nova reserva.
 
-###RESETAR
+### gRESETAR
 POST /salas/resetar
 Reseta salas e reservas no banco
 
