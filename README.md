@@ -64,3 +64,11 @@ Reseta salas e reservas no banco
 
 📌 Observações
 Swagger UI está disponível em /apidocs (habilitado por padrão com Flasgger).
+
+
+# 🛜 Integrações
+#### API School-System
+repositório: https://github.com/VassaloSama/School-System
+
+#### API Activity-System
+repositório: 
