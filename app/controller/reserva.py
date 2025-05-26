@@ -10,7 +10,7 @@ from config import db
 reservasApp = Blueprint('reservas', __name__)
 
 @reservasApp.route('/reservas', methods=['POST'])
-@swag_from('docs/reservas/post.yml')
+@swag_from('../docs/reservas/post.yml')
 def criar_reserva():
     dados = request.json
     try:
@@ -20,13 +20,13 @@ def criar_reserva():
         return jsonify({"erro": str(e.args[0])}), e.args[1]
 
 @reservasApp.route('/reservas', methods=['GET'])
-@swag_from('docs/reservas/get_all.yml')
+@swag_from('../docs/reservas/get_all.yml')
 def listar_reservas():
     reservas = Reservas.listar()
     return jsonify([r.serialize() for r in reservas]), 200
 
 @reservasApp.route('/reservas/<int:id>', methods=['GET'])
-@swag_from('docs/reservas/get_by_id.yml')
+@swag_from('../docs/reservas/get_by_id.yml')
 def buscar_reserva(id):
     reserva = Reservas.buscar_por_id(id)
     if reserva:
