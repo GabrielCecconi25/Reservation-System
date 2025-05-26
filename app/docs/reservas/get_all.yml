@@ -1,0 +1,7 @@
+get:
+  tags:
+    - Reservas
+  summary: Listar todas as reservas
+  responses:
+    200:
+      description: Lista de reservas
