@@ -27,6 +27,9 @@ app/
 
 ## ⚙️ Configuração
 
+### API School-System
+Necessário da API School-System para funcionamento disponível em https://github.com/VassaloSama/School-System
+
 ### Banco de Dados
 
 A aplicação utiliza MySQL. O arquivo `config.py` já possui um exemplo de conexão via `pymysql`:
