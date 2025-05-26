@@ -38,24 +38,18 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@hos
 
 ## 🔌 Endpoints
 ### SALAS
-GET /salas
-Lista todas as salas.
+GET /salas - Lista todas as salas.
 
-GET /salas/<id>
-Retorna os dados de uma sala.
+GET /salas/<span style="color:blue">{id}</span> - Retorna os dados de uma sala.
 
-POST /salas
-Cria uma nova sala.
+POST /salas - Cria uma nova sala.
 
 ### RESERVAS
-GET /salas/reservas
-Lista todas as reservas.
+GET /salas/reservas - Lista todas as reservas.
 
-GET /salas/reservas/<id>
-Retorna os dados de uma reserva.
+GET /salas/reservas/<span style="color:blue">{id}</span> - Retorna os dados de uma reserva.
 
-POST /salas/reservas
-Cria uma nova reserva.
+POST /salas/reservas -Cria uma nova reserva.
 
 ### RESETAR
 POST /salas/resetar
