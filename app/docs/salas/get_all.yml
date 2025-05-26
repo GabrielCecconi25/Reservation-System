@@ -1,0 +1,6 @@
+tags:
+  - Salas
+summary: Listar todas as salas
+responses:
+  200:
+    description: Lista de salas

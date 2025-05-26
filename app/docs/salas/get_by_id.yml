@@ -1,0 +1,14 @@
+tags:
+  - Salas
+summary: Buscar sala por ID
+parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  200:
+    description: Sala encontrada
+  404:
+    description: Sala não encontrada

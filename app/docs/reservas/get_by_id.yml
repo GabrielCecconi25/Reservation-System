@@ -1,0 +1,14 @@
+tags:
+  - Reservas
+summary: Buscar reserva por ID
+parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  200:
+    description: Reserva encontrada
+  404:
+    description: Reserva não encontrada
