@@ -15,7 +15,7 @@ app.config['SWAGGER'] = {
 swagger = Swagger(app)
 
 # Config Banco MySQL
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@db:3306/school-system"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:SenhaForte123@host.docker.internal:3306/school-system"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
