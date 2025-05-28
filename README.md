@@ -14,15 +14,15 @@ API desenvolvida com Flask e SQLAlchemy para gerenciamento de salas e suas reser
 
 ```
 app/
-├── app.py #Ponto de entrada da aplicação Flask
-├── config.py #Configurações de ambiente e banco de dados
+├── app.py # Ponto de entrada da aplicação Flask
+├── config.py # Configurações de ambiente e banco de dados
 ├── models/
-│ ├── salas.py #Model de Salas
-│ ├── reservas.py #Model de Reservas
-| └── turmas_dummy.py #Model de Turmas (outra API)
+│ ├── salas.py # Model de Salas
+│ ├── reservas.py # Model de Reservas
+| └── turmas_dummy.py # Model de Turmas (outra API)
 ├── controller/
-│ ├── sala.py #Controller de Salas
-│ └── reserva.py #Controller de Reservas
+│ ├── sala.py # Controller de Salas
+│ └── reserva.py # Controller de Reservas
 ```
 
 ## ⚙️ Configuração
@@ -68,4 +68,4 @@ Swagger UI está disponível em /apidocs (habilitado por padrão com Flasgger).
 repositório: https://github.com/VassaloSama/School-System
 
 #### API Activity-System
-repositório: 
+repositório: https://github.com/VassaloSama/Activity_system
