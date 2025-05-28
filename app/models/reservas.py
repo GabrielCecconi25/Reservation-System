@@ -1,5 +1,9 @@
-from config import db
 from datetime import datetime
+import requests
+
+from config import db
+from models.salas import Salas
+
 
 class Reservas(db.Model):
     __tablename__ = 'reservas'
@@ -28,6 +32,15 @@ class Reservas(db.Model):
         for campo in ['id_sala', 'id_turma', 'data_reserva', 'hora_inicio', 'hora_fim']:
             if campo not in dados:
                 raise ValueError((f"Campo '{campo}' é obrigatório."), 400)
+            
+        # Verificar se a turma existe
+        if not Reservas.verificar_turma(dados['id_turma']):
+            raise ValueError((f"Turma com ID {dados['id_turma']} não encontrada."), 404)
+        
+        # Verificar se a sala existe
+        if not Salas.query.get(dados['id_sala']):
+            raise ValueError((f"Sala não encontrada."), 404)
+
         try:
             dados['data_reserva'] = datetime.strptime(dados['data_reserva'], '%Y-%m-%d').date()
             dados['hora_inicio'] = datetime.strptime(dados['hora_inicio'], '%H:%M').time()
@@ -73,3 +86,11 @@ class Reservas(db.Model):
             Reservas.hora_inicio < hora_fim,
             Reservas.hora_fim > hora_inicio
         ).first()
+
+    @staticmethod
+    def verificar_turma(id_turma):
+        response = requests.get(f'http://host.docker.internal:5000/turmas/{id_turma}')
+        if response.status_code == 200:
+            return response.json()
+        else:
+            raise ValueError((f"Turma com ID {id_turma} não encontrada."), 404)
