@@ -8,10 +8,11 @@ class TestStringMethods(unittest.TestCase):
         self.reservation_url = 'http://localhost:5001'
 
     def test_00_reset_apis(self):
-        r1 = requests.post(f'{self.school_url}/resetar')
         r2 = requests.post(f'{self.reservation_url}/salas/resetar')
-        self.assertEqual(r1.status_code, 200)
         self.assertEqual(r2.status_code, 200)
+        r1 = requests.post(f'{self.school_url}/resetar')
+        self.assertEqual(r1.status_code, 200)
+        
 
     def test_01_criar_turmas(self):
         r_prof = requests.post(f'{self.school_url}/professores', json={
@@ -87,6 +88,7 @@ class TestStringMethods(unittest.TestCase):
     def test_09_get_reserva_por_id(self):
         r = requests.get(f'{self.reservation_url}/salas/reservas/1')
         self.assertIn(r.status_code, [200, 404])
+        self.test_00_reset_apis() # Reseta os dados após os testes
          
 def runTests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestStringMethods)
